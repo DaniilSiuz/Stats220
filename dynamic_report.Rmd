@@ -43,7 +43,7 @@ Based on the collected data:
 - The **average energy rating** is `r round(mean_energy, 2)` out of 10.
 
 ```{r}
-# Bar chart showing last thing eaten before first class
+# Bar Chart 1: What was last thing eaten before first class?
 ggplot(latest_data, aes(x = last_eat)) +
   geom_bar(fill = "lightblue") +
   labs(
@@ -52,6 +52,15 @@ ggplot(latest_data, aes(x = last_eat)) +
     y = "Count"
   ) +
   theme(axis.text.x = element_text(angle = 60, hjust = 1)) #Rotate the text for better visibility
+
+#Bar Chart 2: Did people have breakfast before going to university at all?
+ggplot(latest_data, aes(x = breakfast)) +
+  geom_bar(fill = "lightblue") +
+  labs(
+    title = "Did Person Have a Breakfast in the Morning",
+    x = "Had Breakfast?",
+    y = "Count"
+  ) 
 
 # Box plot showing how you feel about your academic performance academic based on breakfast
 ggplot(latest_data, aes(x = breakfast, y = academic_rating)) +
